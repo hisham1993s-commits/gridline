@@ -50,7 +50,7 @@ If this policy changes, the updated version will be published at the same link a
 
 ## Contact
 
-Questions about this policy: s12.hisham@gmail.com
+Questions about this policy: hisham1993s@gmail.com
 
 ## Disclaimer
 
