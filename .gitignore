@@ -42,3 +42,6 @@ yarn-error.*
 
 # Claude Code local preview config
 .claude/
+
+# Play Store graphics (uploaded by hand)
+store-assets/
