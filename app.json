@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "Race Live Companion",
+    "slug": "race-live-companion",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#0d0d0d",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "package": "com.hisham.racelivecompanion",
+      "backgroundColor": "#0d0d0d"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "backgroundColor": "#0d0d0d",
+    "plugins": [
+      "expo-status-bar"
+    ]
+  }
+}
