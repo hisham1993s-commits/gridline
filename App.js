@@ -3,17 +3,15 @@ import { View, Text, TouchableOpacity, StyleSheet, StatusBar, BackHandler } from
 import ErrorBoundary from './src/components/ErrorBoundary';
 import { I18nProvider, useI18n } from './src/i18n';
 import { scheduleUpcoming, maybeNotifyWinner } from './src/notifications';
-import LiveScreen from './src/screens/LiveScreen';
+import HomeScreen from './src/screens/HomeScreen';
 import StandingsScreen from './src/screens/StandingsScreen';
 import ScheduleScreen from './src/screens/ScheduleScreen';
-import NewsScreen from './src/screens/NewsScreen';
 import SettingsScreen from './src/screens/SettingsScreen';
 
 const TABS = [
-  { key: 'race', tkey: 'race', icon: '⚑', screen: LiveScreen },
+  { key: 'race', tkey: 'race', icon: '⚑', screen: HomeScreen },
   { key: 'points', tkey: 'points', icon: '▦', screen: StandingsScreen },
   { key: 'schedule', tkey: 'schedule', icon: '▤', screen: ScheduleScreen },
-  { key: 'news', tkey: 'news', icon: '≣', screen: NewsScreen },
   { key: 'settings', tkey: 'settings', icon: '⚙', screen: SettingsScreen },
 ];
 

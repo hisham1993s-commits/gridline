@@ -1,5 +1,5 @@
-# Race Live Companion
+# GridLine
 
-A free Formula 1 live timing and results companion app.
+A free, unofficial motorsport companion app: race schedule, track weather, championship points and the latest race results.
 
-See PRIVACY.md for the privacy policy.
+See [PRIVACY.md](PRIVACY.md) for the privacy policy.

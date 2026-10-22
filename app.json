@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Race Live Companion",
+    "name": "GridLine",
     "slug": "race-live-companion",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -16,7 +16,7 @@
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
-      "package": "com.hisham.racelivecompanion",
+      "package": "com.hisham.gridline",
       "backgroundColor": "#0d0d0d"
     },
     "web": {

@@ -1,28 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import {
-  View, Text, ScrollView, StyleSheet, Switch, TouchableOpacity, BackHandler, Modal, TextInput,
+  View, Text, ScrollView, StyleSheet, Switch, TouchableOpacity, BackHandler, Modal,
 } from 'react-native';
-import {
-  getDelaySec, setDelaySec, getNoSpoiler, setNoSpoiler, getApiToken, setApiToken,
-} from '../settings';
 import { getNotifyEnabled, setNotifyEnabled } from '../notifications';
 import { useI18n, LANGUAGES } from '../i18n';
 import AboutScreen from './AboutScreen';
 
 export default function SettingsScreen() {
   const { t, lang, setLang } = useI18n();
-  const [delay, setDelay] = useState(0);
-  const [noSpoiler, setNS] = useState(false);
   const [notify, setNotify] = useState(false);
   const [showAbout, setShowAbout] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
-  const [token, setToken] = useState('');
 
   useEffect(() => {
-    getDelaySec().then(setDelay);
-    getNoSpoiler().then(setNS);
     getNotifyEnabled().then(setNotify);
-    getApiToken().then(setToken);
   }, []);
 
   // Android back closes the About sub-view first.
@@ -32,12 +23,6 @@ export default function SettingsScreen() {
     return () => sub.remove();
   }, [showAbout]);
 
-  async function changeDelay(next) {
-    const v = Math.max(0, Math.min(120, next));
-    setDelay(v);
-    await setDelaySec(v);
-  }
-  async function toggleNS(v) { setNS(v); await setNoSpoiler(v); }
   async function toggleNotify(v) { setNotify(v); await setNotifyEnabled(v); }
 
   if (showAbout) {
@@ -86,32 +71,6 @@ export default function SettingsScreen() {
         </TouchableOpacity>
       </Modal>
 
-      <Text style={styles.section}>{t('liveFeed')}</Text>
-      <View style={styles.card}>
-        <View style={styles.rowBetween}>
-          <View style={{ flex: 1, paddingRight: 10 }}>
-            <Text style={styles.label}>{t('noSpoilerMode')}</Text>
-            <Text style={styles.hint}>{t('noSpoilerHint')}</Text>
-          </View>
-          <Switch value={noSpoiler} onValueChange={toggleNS}
-            trackColor={{ true: '#E8002D', false: '#333' }} thumbColor="#fff" />
-        </View>
-      </View>
-
-      <View style={styles.card}>
-        <Text style={styles.label}>{t('tvDelay')}</Text>
-        <Text style={styles.hint}>{t('tvDelayHint')}</Text>
-        <View style={styles.stepper}>
-          <TouchableOpacity style={styles.step} onPress={() => changeDelay(delay - 5)}>
-            <Text style={styles.stepText}>−5s</Text>
-          </TouchableOpacity>
-          <Text style={styles.delayValue}>{delay}s</Text>
-          <TouchableOpacity style={styles.step} onPress={() => changeDelay(delay + 5)}>
-            <Text style={styles.stepText}>+5s</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-
       <Text style={styles.section}>{t('notifications')}</Text>
       <View style={styles.card}>
         <View style={styles.rowBetween}>
@@ -122,31 +81,6 @@ export default function SettingsScreen() {
           <Switch value={notify} onValueChange={toggleNotify}
             trackColor={{ true: '#E8002D', false: '#333' }} thumbColor="#fff" />
         </View>
-      </View>
-
-      <Text style={styles.section}>LIVE DATA</Text>
-      <View style={styles.card}>
-        <Text style={styles.label}>OpenF1 sponsor token</Text>
-        <Text style={styles.hint}>
-          Paste your own token from openf1.org to make the live session view
-          real-time. Leave empty to use the free last-session replay.
-        </Text>
-        <TextInput
-          style={styles.input}
-          value={token}
-          onChangeText={setToken}
-          onEndEditing={() => setApiToken(token)}
-          placeholder="paste token (optional)"
-          placeholderTextColor="#666"
-          autoCapitalize="none"
-          autoCorrect={false}
-          secureTextEntry
-        />
-        {!!token && (
-          <TouchableOpacity onPress={() => { setToken(''); setApiToken(''); }}>
-            <Text style={styles.clearToken}>Clear token</Text>
-          </TouchableOpacity>
-        )}
       </View>
 
       <Text style={styles.section}>{t('info')}</Text>
@@ -169,10 +103,6 @@ const styles = StyleSheet.create({
   rowBetween: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   label: { color: '#fff', fontSize: 16, fontWeight: '600' },
   hint: { color: '#999', fontSize: 13, marginTop: 4, lineHeight: 18 },
-  stepper: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: 14 },
-  step: { backgroundColor: '#262626', borderRadius: 10, paddingVertical: 10, paddingHorizontal: 20 },
-  stepText: { color: '#fff', fontWeight: '700', fontSize: 15 },
-  delayValue: { color: '#fff', fontSize: 22, fontWeight: '800' },
   chev: { color: '#777', fontSize: 22 },
   backdrop: { flex: 1, backgroundColor: 'rgba(0,0,0,0.6)', justifyContent: 'center', padding: 28 },
   pickerBox: { backgroundColor: '#1a1a1a', borderRadius: 16, padding: 8, borderWidth: 1, borderColor: '#333' },
@@ -182,13 +112,6 @@ const styles = StyleSheet.create({
   pickerText: { color: '#ddd', fontSize: 16 },
   pickerTextOn: { color: '#fff', fontWeight: '700' },
   pickerCheck: { color: '#E8002D', fontSize: 16, fontWeight: '800' },
-  input: { backgroundColor: '#0d0d0d', color: '#fff', borderRadius: 10, padding: 12, marginTop: 12, borderWidth: 1, borderColor: '#2a2a2a', fontSize: 14 },
-  clearToken: { color: '#ff6b6b', fontSize: 13, fontWeight: '700', marginTop: 10 },
-  langWrap: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
-  langChip: { backgroundColor: '#262626', borderRadius: 20, paddingVertical: 8, paddingHorizontal: 14 },
-  langChipOn: { backgroundColor: '#E8002D' },
-  langText: { color: '#ccc', fontWeight: '600', fontSize: 14 },
-  langTextOn: { color: '#fff' },
   back: { paddingTop: 50, paddingHorizontal: 16, paddingBottom: 6, backgroundColor: '#0d0d0d' },
   backText: { color: '#E8002D', fontSize: 16, fontWeight: '700' },
 });

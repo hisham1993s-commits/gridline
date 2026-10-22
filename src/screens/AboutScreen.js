@@ -17,7 +17,7 @@ export default function AboutScreen() {
   const version = APP_VERSION;
   return (
     <ScrollView style={styles.wrap} contentContainerStyle={styles.content}>
-      <Text style={styles.logo}>RACE LIVE</Text>
+      <Text style={styles.logo}>GRIDLINE</Text>
       <Text style={styles.by}>Created by Hisham · Free</Text>
 
       <Text style={styles.h2}>App</Text>
@@ -33,21 +33,19 @@ export default function AboutScreen() {
       </TouchableOpacity>
 
       <Text style={styles.h2}>Data sources</Text>
-      <TouchableOpacity onPress={() => Linking.openURL('https://openf1.org')}>
-        <Row label="Live timing & weather" value="OpenF1 ›" />
-      </TouchableOpacity>
       <TouchableOpacity onPress={() => Linking.openURL('https://api.jolpi.ca')}>
-        <Row label="Standings & schedule" value="Jolpica ›" />
+        <Row label="Schedule, standings & results" value="Jolpica ›" />
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => Linking.openURL('https://www.formula1.com')}>
-        <Row label="News headlines" value="Formula1.com ›" />
+      <TouchableOpacity onPress={() => Linking.openURL('https://open-meteo.com')}>
+        <Row label="Track weather" value="Open-Meteo ›" />
       </TouchableOpacity>
 
       <Text style={styles.disclaimer}>
         This app is an independent, free fan project. It is not affiliated with,
         endorsed by, or associated with Formula 1, the FIA, Formula One Management,
-        or any team. All trademarks belong to their respective owners. Live timing
-        and standings data come from OpenF1 and Jolpica; please see their terms.
+        or any team. All trademarks belong to their respective owners. Schedule,
+        standings and results come from Jolpica and weather from Open-Meteo;
+        please see their terms.
       </Text>
     </ScrollView>
   );
@@ -66,12 +64,4 @@ const styles = StyleSheet.create({
   label: { color: '#bbb', fontSize: 14 },
   value: { color: '#fff', fontSize: 14, fontWeight: '600' },
   disclaimer: { color: '#666', fontSize: 12, lineHeight: 18, marginTop: 24 },
-  coffee: {
-    flexDirection: 'row', alignItems: 'center', backgroundColor: '#1b1b1b',
-    borderRadius: 12, padding: 16, marginTop: 24, borderWidth: 1, borderColor: '#2a2a2a',
-  },
-  coffeeEmoji: { fontSize: 26, marginRight: 14 },
-  coffeeTitle: { color: '#fff', fontSize: 16, fontWeight: '700' },
-  coffeeSub: { color: '#999', fontSize: 12, marginTop: 2 },
-  coffeeChev: { color: '#777', fontSize: 22 },
 });

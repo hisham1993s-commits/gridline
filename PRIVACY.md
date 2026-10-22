@@ -1,8 +1,8 @@
-# Privacy Policy — Race Live Companion
+# Privacy Policy — GridLine
 
-Last updated: 22 October 2026
+Last updated: 23 October 2026
 
-Race Live Companion ("the app") is a free Formula 1 fan app developed by Hisham.
+GridLine ("the app") is a free motorsport fan app developed by Hisham. It shows the race schedule, track weather, championship points and the latest race results.
 This policy explains what information the app handles.
 
 ## Information we collect
@@ -15,26 +15,24 @@ It does not require an account, sign-in, or registration.
 The app saves a few preferences locally on your device using standard app storage:
 
 - Language and time-zone display choice
-- Spoiler-mode, TV-delay and notification settings
-- Optional OpenF1 API token, only if you paste one in Settings (it stays on your device)
+- Favourite driver and team
+- Notification setting
 
 You can clear this data at any time by uninstalling the app or clearing its storage in Android settings.
 
 ## Network requests
 
-To show live and historical data, the app makes requests to these public services:
+To show its data, the app makes requests to these public services:
 
-- OpenF1 (openf1.org) — timing, weather, race control and team radio
 - Jolpica (api.jolpi.ca) — schedule, standings and results
-- Open-Meteo (open-meteo.com) — weather forecasts
-- Formula 1 official news feed (formula1.com) — headlines
+- Open-Meteo (open-meteo.com) — current weather and forecasts at the circuit
 - GitHub raw content — circuit map data
 
 These services receive the standard technical information every internet request sends (such as your IP address). The app does not send them your name, contacts, location, or any other personal details. Please read each provider's own privacy policy for how they handle request data.
 
 ## Notifications
 
-If you turn on live-session notifications, the app uses the Android notification permission to show local reminders on your device. No notification data leaves your device.
+If you turn on session reminders, the app uses the Android notification permission to show local reminders on your device. No notification data leaves your device.
 
 ## Advertising and payments
 
