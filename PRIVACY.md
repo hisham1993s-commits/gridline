@@ -11,9 +11,15 @@ The app does not require an account, sign-in, or registration, and the developer
 
 ### Version 1.0.0 only: app update service
 
-Version 1.0.0 includes Expo's update service. When it checks for updates, it connects to Expo (u.expo.dev) and sends a randomly generated identifier for that installation of the app, along with technical information such as the app's update version, the platform and your IP address. The developer does not use this identifier to identify you, track you or show advertising. Clearing the app's storage removes the copy held on your device; Expo decides how long it keeps its own request records.
+Version 1.0.0 includes Expo's update service, which connects to Expo (u.expo.dev) over HTTPS to check for app updates. Those requests send:
 
-**Version 1.0.1 and later do not include this update service and do not send this identifier.** See Expo's privacy policy at https://expo.dev/privacy for how Expo handles request data.
+- A randomly generated identifier for that installation of the app
+- Technical information such as the app's update version and the platform, and your IP address
+- If the app failed to launch, the text of the last launch error (sent once) and the IDs of any updates that failed to launch
+
+Expo processes this data for the developer as a service provider. According to [Expo's documentation](https://docs.expo.dev/eas-update/store-privacy-declarations/), Expo stores the identifier and IP address with its request records, uses them to deliver updates, count installations and failed installations and measure usage, and deletes the launch error text after three days. The developer does not use this data to identify you, track you or show advertising. Clearing the app's storage removes the copy of the identifier held on your device.
+
+**Version 1.0.1 and later do not include this update service and do not send this data.** See Expo's privacy policy at https://expo.dev/privacy for how Expo handles and retains data.
 
 ## Information stored on your device
 
@@ -42,7 +48,7 @@ If you turn on session reminders, the app uses the Android notification permissi
 
 ## Advertising and payments
 
-The app contains no advertising, no analytics or tracking SDKs, and no in-app purchases. It is free to use.
+The app contains no advertising, no separate analytics or advertising SDKs, and no in-app purchases. In version 1.0.0, Expo's update service measures installations and usage as described above. It is free to use.
 
 ## Children
 
