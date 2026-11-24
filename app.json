@@ -24,7 +24,8 @@
     },
     "backgroundColor": "#0d0d0d",
     "plugins": [
-      "expo-status-bar"
+      "expo-status-bar",
+      "./plugins/withOptionalPortrait"
     ],
     "extra": {
       "eas": {
