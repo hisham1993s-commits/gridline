@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, ScrollView, StyleSheet, Linking, TouchableOpacity } from 'react-native';
-import { INSTAGRAM_URL, CONTACT_EMAIL } from '../config';
+import { INSTAGRAM_URL, CONTACT_EMAIL, PRIVACY_URL } from '../config';
 
-const APP_VERSION = '1.0.0';
+const APP_VERSION = '1.0.1';
 
 function Row({ label, value }) {
   return (
@@ -30,6 +30,11 @@ export default function AboutScreen() {
       </TouchableOpacity>
       <TouchableOpacity onPress={() => Linking.openURL(`mailto:${CONTACT_EMAIL}`)}>
         <Row label="Email" value={`${CONTACT_EMAIL} ›`} />
+      </TouchableOpacity>
+
+      <Text style={styles.h2}>Legal</Text>
+      <TouchableOpacity accessibilityRole="link" onPress={() => Linking.openURL(PRIVACY_URL)}>
+        <Row label="Privacy policy" value="Open ›" />
       </TouchableOpacity>
 
       <Text style={styles.h2}>Data sources</Text>

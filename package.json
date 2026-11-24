@@ -1,6 +1,6 @@
 {
   "name": "gridline",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "dependencies": {
     "@expo/metro-runtime": "~58.0.14",
@@ -8,7 +8,6 @@
     "expo": "~58.0.17",
     "expo-notifications": "~58.1.6",
     "expo-status-bar": "~58.0.4",
-    "expo-updates": "~58.0.18",
     "react": "19.3.0",
     "react-dom": "19.3.0",
     "react-native": "0.88.0",
@@ -19,8 +18,7 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web",
-    "ota": "eas update --branch preview"
+    "web": "expo start --web"
   },
   "private": true,
   "devDependencies": {

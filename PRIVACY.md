@@ -1,14 +1,19 @@
 # Privacy Policy — GridLine
 
-Last updated: 23 October 2026
+Last updated: 24 November 2026
 
 GridLine ("the app") is a free motorsport fan app developed by Hisham. It shows the race schedule, track weather, championship points and the latest race results.
 This policy explains what information the app handles.
 
 ## Information we collect
 
-The app does **not** collect, store on any server, or sell personal information.
-It does not require an account, sign-in, or registration.
+The app does not require an account, sign-in, or registration, and the developer does not operate a server that receives or stores your data. The app does not ask for your name, contacts or location, and the developer does not sell personal information.
+
+### Version 1.0.0 only: app update service
+
+Version 1.0.0 includes Expo's update service. When it checks for updates, it connects to Expo (u.expo.dev) and sends a randomly generated identifier for that installation of the app, along with technical information such as the app's update version, the platform and your IP address. The developer does not use this identifier to identify you, track you or show advertising. Clearing the app's storage removes the copy held on your device; Expo decides how long it keeps its own request records.
+
+**Version 1.0.1 and later do not include this update service and do not send this identifier.** See Expo's privacy policy at https://expo.dev/privacy for how Expo handles request data.
 
 ## Information stored on your device
 
@@ -17,8 +22,9 @@ The app saves a few preferences locally on your device using standard app storag
 - Language and time-zone display choice
 - Favourite driver and team
 - Notification setting
+- The last race result that was announced, so it is not announced twice
 
-You can clear this data at any time by uninstalling the app or clearing its storage in Android settings.
+You can remove this data from your device by clearing the app's storage in Android settings or uninstalling the app. If you use Android backup, Android may include these settings in your own device backup, which you control in Android settings.
 
 ## Network requests
 
@@ -28,11 +34,11 @@ To show its data, the app makes requests to these public services:
 - Open-Meteo (open-meteo.com) — current weather and forecasts at the circuit
 - GitHub raw content — circuit map data
 
-These services receive the standard technical information every internet request sends (such as your IP address). The app does not send them your name, contacts, location, or any other personal details. Please read each provider's own privacy policy for how they handle request data.
+These services receive the standard technical information every internet request sends (such as your IP address). The app does not send them your name, contacts, location, or the preferences listed above. Weather requests use the location of the race circuit, not yours. If you tap an external link, it opens outside the app and that site's own privacy policy applies. Please read each provider's own privacy policy for how they handle request data.
 
 ## Notifications
 
-If you turn on session reminders, the app uses the Android notification permission to show local reminders on your device. No notification data leaves your device.
+If you turn on session reminders, the app uses the Android notification permission to show local reminders on your device. Reminders are scheduled on your device, and the app does not use a push notification server.
 
 ## Advertising and payments
 
@@ -40,7 +46,7 @@ The app contains no advertising, no analytics or tracking SDKs, and no in-app pu
 
 ## Children
 
-The app is not directed at children under 13 and does not knowingly collect personal information from anyone.
+The app is not directed at children under 13 and does not knowingly collect personal information from children.
 
 ## Changes
 

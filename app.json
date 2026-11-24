@@ -2,7 +2,7 @@
   "expo": {
     "name": "GridLine",
     "slug": "race-live-companion",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
@@ -22,9 +22,6 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "runtimeVersion": {
-      "policy": "appVersion"
-    },
     "backgroundColor": "#0d0d0d",
     "plugins": [
       "expo-status-bar"
@@ -34,9 +31,6 @@
         "projectId": "3ab73c1f-5698-4bee-a1fb-520ec71132dc"
       }
     },
-    "owner": "hisham12s",
-    "updates": {
-      "url": "https://u.expo.dev/3ab73c1f-5698-4bee-a1fb-520ec71132dc"
-    }
+    "owner": "hisham12s"
   }
 }
